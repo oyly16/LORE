@@ -28,13 +28,6 @@ def encode(init_image, torch_device, ae):
     init_image = ae.encode(init_image.to()).to(torch.bfloat16)
     return init_image  
 
-def get_token_ratio(tgt_token_ids,change_id):
-    all_len = 0
-    tgt_len = len(tgt_token_ids[change_id][1])
-    for _,ids in tgt_token_ids:
-        all_len += len(ids)
-    return float(all_len)/float(tgt_len)
-
 def run_one_sample_rf_inverse(src_img, src_prompt, steps, inject_step, t5, clip, model, ae):
     print(f"Inversing {src_img}, inje/step {inject_step}/{steps}")
     print(f"src prompt: {src_prompt}")
