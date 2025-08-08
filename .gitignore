@@ -1,0 +1,9 @@
+src/examples/edit-result/
+src/flux/t5-v1_1-xxl/
+src/flux/clip-vit-large-patch14/
+src/flux/FLUX.1-dev/
+**/__pycache__/
+**/.ipynb_checkpoints/
+src/outputs_demo/
+src/outputs_gradio/
+src/.gradio/
