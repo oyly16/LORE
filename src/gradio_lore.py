@@ -281,7 +281,7 @@ def create_demo(model_name: str):
         <b>Here are editing steps:</b> <br>
         1️⃣ Upload your source image. <br>
         2️⃣ Fill in your source prompt and click the "Inverse" button to perform image inversion. <br>
-        3️⃣ Use the brush tool to draw your mask. <br>
+        3️⃣ Use the brush tool to draw your mask. (on layer 1) <br>
         4️⃣ Fill in your target prompt, then adjust the hyperparameters. <br>
         5️⃣ Click the "Edit" button to generate your edited image! <br>
         6️⃣ If source image and prompt are not changed, you can click 'Edit' for next generation. <br>
