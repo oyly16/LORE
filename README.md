@@ -55,7 +55,7 @@ If you find our work helpful, please **star 🌟** this repo and **cite 📑** o
 ```
 
 # Acknowledgements
-We thank [FLUX](https://github.com/black-forest-labs/flux/tree/main) and [RF-Edit](https://github.com/wangjiangshan0725/RF-Solver-Edit) for their clean codebase.
+This work was conducted during an internship at [CyberAgent AILab](https://research.cyberagent.ai/). We thank [FLUX](https://github.com/black-forest-labs/flux/tree/main) and [RF-Edit](https://github.com/wangjiangshan0725/RF-Solver-Edit) for their clean codebase.
 
 # Contact
-If you have any questions or concerns, please send emails to oyly@iis.u-tokyo.ac.jp.
+If you have any questions or concerns, please send emails to [oyly@iis.u-tokyo.ac.jp](oyly@iis.u-tokyo.ac.jp).
