@@ -47,14 +47,11 @@ mkdir outputs_gradio
 If you find our work helpful, please **star 🌟** this repo and **cite 📑** our paper. Thanks for your support!
 
 ```
-@misc{ouyang2025lorelatentoptimizationprecise,
-      title={LORE: Latent Optimization for Precise Semantic Control in Rectified Flow-based Image Editing}, 
-      author={Liangyang Ouyang and Jiafeng Mao},
-      year={2025},
-      eprint={2508.03144},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2508.03144}, 
+@article{ouyang2025lore,
+  title={LORE: Latent Optimization for Precise Semantic Control in Rectified Flow-based Image Editing},
+  author={Ouyang, Liangyang and Mao, Jiafeng},
+  journal={arXiv preprint arXiv:2508.03144},
+  year={2025}
 }
 ```
 
