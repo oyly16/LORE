@@ -2,7 +2,7 @@
   
 # LORE: Latent Optimization for Precise Semantic Control in Rectified Flow-based Image Editing
 
-[Paper](https://arxiv.org/abs/2508.03144) | [HF Space (Coming Soon)](https://github.com/oyly16/LORE) |[CyberAgent AILab](https://research.cyberagent.ai/)
+[Paper](https://arxiv.org/abs/2508.03144) | [Online Demo (Coming Soon)](https://github.com/oyly16/LORE) |[CyberAgent AILab](https://research.cyberagent.ai/)
 -----------------------------|-----------------------------|-----------------------------
 
 ![LORE examples](figs/fig_1.png)
