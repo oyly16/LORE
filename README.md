@@ -2,7 +2,7 @@
   
 # LORE: Latent Optimization for Precise Semantic Control in Rectified Flow-based Image Editing
 
-[Paper](https://arxiv.org/abs/2508.03144) | [Online Demo (Coming Soon)](https://github.com/oyly16/LORE) |[CyberAgent AILab](https://research.cyberagent.ai/)
+[Paper](https://arxiv.org/abs/2508.03144) | [Online Demo](https://huggingface.co/spaces/oyly/LORE) |[CyberAgent AILab](https://research.cyberagent.ai/)
 -----------------------------|-----------------------------|-----------------------------
 
 ![LORE examples](figs/fig_1.png)
@@ -30,11 +30,18 @@ Check [this script](src/demo_lore.py) for tuning edting parameters.
 
 # Gradio Demo
 
-Due to limited computational resources, we will resize the images to 800 pixels (long side) while preserving the aspect ratio.
+To run our [HF space demo](https://huggingface.co/spaces/oyly/LORE) locally, run app.py
+```
+cd src
+mkdir outputs_gradio
+python app.py
+```
+Samples will be saved to /src/outputs_gradio.
 
-If you have more GPU memory, you can use --resize -1 to skip resize.
+We also support a demo that divide inverse and editing, which saves generation time.
 
-If you need to save image editing pairs, add --save. Samples will be saved to /src/outputs_gradio.
+Due to limited computational resources, you may resize the images to 800 pixels (long side) while preserving the aspect ratio.
+
 ```
 cd src
 mkdir outputs_gradio
