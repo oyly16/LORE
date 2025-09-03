@@ -10,8 +10,6 @@ from PIL import ExifTags, Image
 import torch
 import gradio as gr
 import numpy as np
-# from flux.sampling import prepare
-# from flux.util import (configs, load_ae, load_clip, load_t5)
 from flux.sampling_lore import denoise, get_schedule, prepare, unpack, get_v_mask, add_masked_noise_to_z,get_mask_one_tensor, denoise_with_noise_optim,prepare_tokens
 from flux.util_lore import (configs, embed_watermark, load_ae, load_clip,
                        load_flow_model, load_t5)
@@ -80,7 +78,7 @@ class FluxEditor_lore_demo:
         pil_mask = Image.fromarray(mask.astype(np.uint8))  # ensure it's 8-bit for PIL
         resized_pil = pil_mask.resize((width, height), Image.NEAREST)  # width first!
         return np.array(resized_pil)
-        
+   
     def inverse(self, brush_canvas,src_prompt, 
                 inversion_num_steps, injection_num_steps, 
                 inversion_guidance,
@@ -189,7 +187,8 @@ class FluxEditor_lore_demo:
             token_ids.append([t_ids,True,1])
         print('token_ids',token_ids)
         # do latent optim
-        
+        t5.to('cpu')
+        clip.to('cpu')
         t0 = time.perf_counter() 
         print(f'optimizing & editing noise, {target_prompt} with seed {seed}, noise_scale {noise_scale}, training_epochs {training_epochs}')
         if training_epochs != 0:
@@ -238,7 +237,8 @@ class FluxEditor_lore_demo:
                 Image.fromarray(binary_mask, mode="L").save(output_path.replace(target_object,f'{target_object}_mask'))
             t1 = time.perf_counter()  
             print(f"Done in {t1 - t0:.1f}s.", f'Saving {output_path} .' if self.save else 'No saving files.')
-        
+        t5.to(self.device)
+        clip.to(self.device)
         return img
 
     def encode(self,init_image, torch_device):

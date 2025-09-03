@@ -163,6 +163,8 @@ def main(
     print('token_ids',token_ids)
 
     # run
+    t5.to('cpu')
+    clip.to('cpu')
     for seed in args.seeds:
         if seed == -1:
             seed = torch.randint(0, 2**32, (1,)).item()
@@ -209,6 +211,8 @@ def main(
     
     t1 = time.perf_counter()  
     print(f"Done in {t1 - t0:.1f}s. Saving {output_path}")
+    t5.to(torch_device)
+    clip.to(torch_device)
 
 if __name__ == "__main__":
     
