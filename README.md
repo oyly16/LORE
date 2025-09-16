@@ -49,6 +49,18 @@ mkdir outputs_gradio
 (run sharing) python gradio_lore.py --resize 800 --share
 ```
 
+
+# Visualize Attention Maps
+
+We further add a demo to visualize attention maps of ours optimization noise comparing to inversion noise.
+
+Examples are provided in /src/run_vis_attnmaps.sh
+```
+cd src
+mkdir outputs_attnmap
+bash run_vis_attnmaps.sh
+```
+
 # Citation
 
 If you find our work helpful, please **star 🌟** this repo and **cite 📑** our paper. Thanks for your support!
