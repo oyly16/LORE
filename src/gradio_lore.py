@@ -187,8 +187,8 @@ class FluxEditor_lore_demo:
             token_ids.append([t_ids,True,1])
         print('token_ids',token_ids)
         # do latent optim
-        t5.to('cpu')
-        clip.to('cpu')
+        self.t5.to('cpu')
+        self.clip.to('cpu')
         t0 = time.perf_counter() 
         print(f'optimizing & editing noise, {target_prompt} with seed {seed}, noise_scale {noise_scale}, training_epochs {training_epochs}')
         if training_epochs != 0:
@@ -237,8 +237,8 @@ class FluxEditor_lore_demo:
                 Image.fromarray(binary_mask, mode="L").save(output_path.replace(target_object,f'{target_object}_mask'))
             t1 = time.perf_counter()  
             print(f"Done in {t1 - t0:.1f}s.", f'Saving {output_path} .' if self.save else 'No saving files.')
-        t5.to(self.device)
-        clip.to(self.device)
+        self.t5.to(self.device)
+        self.clip.to(self.device)
         return img
 
     def encode(self,init_image, torch_device):
