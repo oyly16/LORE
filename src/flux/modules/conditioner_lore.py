@@ -112,23 +112,24 @@ class HFEmbedder(nn.Module):
             if (words is None) or start_idx<0: # some samples do not need this
                 return [-1]
             res = []
-            flag = 0
+            l_words = len(words.replace(" ", ""))
+            l_find = 0
             for i in range(start_idx,len(tokens)):
                 this_token = tokens[i].strip('▁')
                 if this_token == "":
                     continue
                 if words.startswith(this_token):
                     res.append(i)
-                    flag = 1
-                    if words.endswith(this_token):
+                    l_find += len(this_token)
+                    if l_find >= l_words:
                         break
                     else:
                         continue
-                if flag and words.endswith(this_token):
+                if l_find:
+                    l_find += len(this_token)
                     res.append(i)
-                    break
-                if flag:
-                    res.append(i)
+                    if l_find >= l_words:
+                        break
             return res
         
         for src_words, tgt_words, src_index, tgt_index in replacements:
